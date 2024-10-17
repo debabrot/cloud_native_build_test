@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies"
+      - pip install -r requirements.txt  # if you have a Python project, for example
+  pre_build:
+    commands:
+      - echo "Running tests before build"
+      - pytest tests/  # assuming you use pytest for your test cases
+  build:
+    commands:
+      - echo "Building the project"
+      # If there's no actual build step, this can be left empty or just a placeholder.
+  post_build:
+    commands:
+      - echo "Post-build steps"
+
+artifacts:
+  files:
+    - '**/*'  # To specify what files or artifacts you want to upload after the build process
